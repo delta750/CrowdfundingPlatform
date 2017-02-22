@@ -5,7 +5,7 @@ using System.Web;
 
 namespace CrowdfundingPlatform.Models
 {
-    public class UserDTO
+    public class UserDto
     {
         public long? Id { get; set; }
 

@@ -19,7 +19,16 @@ namespace CrowdfundingPlatform.Models
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
-    {
+    {   
+        public DbSet<ProjectCategoryDto> Categories { get; set; }
+        public DbSet<ProjectDTO> Project { get; set; }
+        public DbSet<AttachmentDto> Attachment { get; set; }
+        public DbSet<FundingPackageDto> FundingPackage { get; set; }
+        public DbSet<ProjectCommentDto> ProjectComment { get; set; }
+        public DbSet<ProjectStatsDto> ProjectStats { get; set; }
+        public DbSet<ProjectUpdateDto> ProjectUpdate { get; set; }
+        public DbSet<UserFundingDTO> UserFunding { get; set; }
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

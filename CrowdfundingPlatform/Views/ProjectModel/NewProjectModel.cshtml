@@ -1,0 +1,33 @@
+﻿@model CrowdfundingPlatform.Views.ViewModels.NewProjectViewModel
+@{
+    ViewBag.Title = "NewProjectModel";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2> Get Started with a new Project</h2>
+
+
+
+
+@using (Html.BeginForm("Create", "ProjectModel"))
+{
+    
+    <div class="form-group">
+        @Html.LabelFor(m => m.ProjectDTO.Title)
+        @Html.TextBoxFor(m => m.ProjectDTO.Title, new { @class = "form-control"})
+
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.ProjectDTO.CategoryId)
+        @Html.DropDownListFor(m => m.ProjectDTO.CategoryId, new SelectList(Model.CategoriesDts, "Id", "Name"), "-- Select Category --", new { @class = "form-control" })
+        
+    </div>
+   
+    <div class="form-group">
+        @Html.LabelFor(m => m.FundingEndDate)
+       
+
+    </div>
+    <button type="submit" class="btn btn-primary">Save and continue</button>
+}

@@ -1,19 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
 namespace CrowdfundingPlatform.Models
 {
-    public class ProjectModelDTO
+    public class ProjectDTO
     {
-        public long? Id { get; set; }
+        [Key]
+        public long? ProjectId { get; set; }
 
-        public long ProjectCategoryId { get; set; }
+        public long Id { get; set; } //User Asp.net Id
 
+        public long CategoryId { get; set; }
+        [Display(Name= "Category")]
         public string ProjectCategoryDesc { get; set; }
 
-        public long? AttachmentSetId { get; set; }
+        public long? AttachmentId { get; set; }
 
         public string Title { get; set; }
 
@@ -34,5 +38,8 @@ namespace CrowdfundingPlatform.Models
         public long? OwnerId { get; set; }
 
         public string MainPhoto { get; set; }
+       
+        
+ 
     }
 }

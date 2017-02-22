@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
 namespace CrowdfundingPlatform.Models
 {
-    public class ProjectStatsDTO
+    public class ProjectStatsDto
     {
-        public long? Id { get; set; }
+        [Key]
+        public long? ProjectStatsId { get; set; }
 
         public long ProjectId { get; set; }
 

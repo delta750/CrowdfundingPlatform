@@ -6,21 +6,21 @@ using System.Web;
 
 namespace CrowdfundingPlatform.Models
 {
-    public class UserFundingDTO
+    public class ProjectCommentDto
     {
         [Key]
-        public long? UserFundingId { get; set; }
+        public long? CommentId { get; set; }
 
-        public long FundingPackageId { get; set; }
+        public long ProjectId { get; set; }
+
+        public string Name { get; set; }
 
         public long Id { get; set; } //User Asp.net Id
 
-        public string Username { get; set; }
+        public long? AttachmentSetId { get; set; }
 
         public DateTime WhenDateTime { get; set; }
 
-        public decimal AmountPaid { get; set; }
-
-        public string TransactionId { get; set; }
+        public string Description { get; set; }
     }
 }
